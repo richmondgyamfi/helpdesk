@@ -7,15 +7,15 @@
 
         <title>Portal Helpdesk</title>
 
-         <script type="text/javascript" src="js/jquery.min.js"></script>
-        <link rel="stylesheet" href="css/bootstrap.min.css" >
-        <link href="css/font-awesome.min.css" rel="stylesheet" >
+         <script type="text/javascript" src="../../js/jquery.min.js"></script>
+        <link rel="stylesheet" href="../../css/bootstrap.min.css" >
+        <link href="../../css/font-awesome.min.css" rel="stylesheet" >
         <!-- <link href="css/style5.css" rel="stylesheet" > -->
-        <link rel="stylesheet" href="css/shards.min.css">
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="../../css/shards.min.css">
+        <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
         <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
         <!-- Our Custom CSS -->
-        <link rel="stylesheet" href="css/style5.css">
+        <link rel="stylesheet" href="../../css/style5.css">
         <style type="text/css">
       
       .sidebar-sticky {
@@ -53,7 +53,7 @@
           position: relative; 
       }
       #section1 {padding:10px;height:500px;color: #fff; box-shadow: 3px 3px #bbbbbb; border-radius:25px; background-color: #0069d9;}
-      #section2 {padding:10px;height:500px;color: #fff; box-shadow: 3px 3px #bbbbbb; border-radius:25px; background-color: grey;}
+      #section2 {padding:10px; margin-top:10px;  color: #fff; box-shadow: 3px 3px #bbbbbb; border-radius:25px; background-color: white;}
       #section3 {padding:20px;height:80px; width: auto; color: #fff; box-shadow: 3px 3px #bbbbbb; border-radius:25px; background-color: #ff9800;}
       #section41 {padding-top:50px;height:500px;color: #fff; background-color: #00bcd4;}
       #section42 {padding-top:50px;height:500px;color: #fff;  background-color: #009688;}
@@ -144,6 +144,11 @@
     overflow-y: scroll;
     height: 200px; }
         </style>
+        <?php  
+     // include '../header.php';
+
+    require_once '../../php/connect.php';
+      ?>
     </head>
     <body>
 
@@ -153,22 +158,33 @@
             <!-- Sidebar Holder -->
             <nav id="sidebar">
                 <div class="sidebar-header">
-                   <a href="index.php"><h3>Portal Help Desk</h3></a>
+                    <a href="index.php"><h3>Portal Help Desk</h3></a>
                 </div>
 
                 <ul class="list-unstyled components">
-                    <li class="nav-item" style="margin-bottom: 10px;">
+                    <!-- <p></p> -->
+                  <li class="nav-item" style="margin-bottom: 10px;">
                     <a class="btn btn-info nav-link active" href="#">
                       <!-- <span class="fa fa-home"></span> -->
                       Dashboard <span class="sr-only">(current)</span>
                     </a>
                   </li>
-                    <li class="nav-item" style="margin-bottom: 10px;">
-                        <a class="nav-link btn btn-danger" href="pages/residential.php">
-                          Help Desk
-                        </a>
-                    </li>
-                    <li class="nav-item">
+                  <?php 
+                    $sql1 = "SELECT DISTINCT subject FROM chatdb WHERE studid = 'ps/csc/14' ORDER BY activity DESC";
+                      $row = mysqli_query($dbcon, $sql1);
+                     ?>
+                     <?php while($message_topic = mysqli_fetch_assoc($row)): ?>
+                  <li class="nav-item" style="margin-bottom: 10px;">
+                   <!--  <a class="nav-link btn btn-primary" href="residential.php">
+                      <span class="fa fa-file"></span>
+                      Residential
+                    </a> -->
+                    <a class="nav-link btn btn-primary" href="../message_topic.php?id=<?php echo $message_topic['subject'];?>" id="topic" name="topic"><?php echo $message_topic['subject'];?></a>
+                  </li>
+                  <?php endwhile; ?>
+                  <br/>
+                  <p></p>
+                  <li class="nav-item">
                     <a class="nav-link btn btn-waring" href="#">
                       <!-- <span data-feather="layers"></span> -->
                       Sign Out
@@ -178,7 +194,7 @@
             </nav>
 
             <!-- Page Content Holder -->
-            <div id="content" style="margin: 0px; width: 100%">
+            <div id="content" style="margin: 0px; width: 100%;">
 
                 <nav class="navbar navbar-default">
                     <div class="container-fluid">

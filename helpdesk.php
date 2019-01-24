@@ -1,5 +1,5 @@
 <?php 
-include 'header.php';
+// include 'header.php';
 include 'php/connect.php';
 
 if (isset($_POST['submit'])) {
@@ -18,10 +18,10 @@ if (isset($_POST['submit'])) {
  	<?php 
  	include 'nav.php';
  	 ?>
-        <div style="margin-top: 80px;" class="col-md-10">
-        	<div class="row">
-        	<div style="margin-left: 80px;" class="col-md-5">
-				<form method="POST" action="helpdesk.php" class="form form-group" id="form1" style=" background-color: #f0f0f0; border: 2px solid">
+        <div class="col-md-12">
+        	<div class="row" style="">
+        	<div style="margin-right: 2%;" class="col-md-5">
+				<form method="POST" action="helpdesk.php" class="form form-group" id="form1" style=" background-color: #f0f0f0; border: 2px solid; width: 100%;">
 					<div style="background-color: #4E545B;">
 					<h2 style="margin-top: 0px; padding: 10px; color: white;" class="text-center">Help Desk</h2>
 					</div>
@@ -49,17 +49,13 @@ if (isset($_POST['submit'])) {
 				<!-- <div style="text-align: right;">
 					<a href="index.php">Back</a>
 				</div> -->
-				<div class="col-md-5" >
-				<!-- <div id="subject">
-					<h3>Subject</h3>
-				</div> -->
+				<div>
+					
+				</div>
+				<div style="margin-left: 0%;" class="col-md-5">
 				<?php 
-				// if (isset($_POST['submit'])) {
 					$sql1 = "SELECT topic, subject, message_sent, message_reply, activity FROM chatdb WHERE studid = 'ps/csc/14' ORDER BY activity DESC";
 					  $row = mysqli_query($dbcon, $sql1);
-					// $activity = date('Y-m-d G:i:s');
-					 // echo $sql2;
-				//} 
 				?>
  				<div style="height: 600px;" class="container-fluid card example-1 scrollbar-ripe-malinka">
 				<?php while($message_topic = mysqli_fetch_assoc($row)): ?>

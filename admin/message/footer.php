@@ -16,7 +16,7 @@
 
 
     $(document).ready(function(){
-        $('#topic').click(function(){
+        $('#topic1').click(function(){
             var topicID = $(this).val();
 
             $.ajax({
@@ -53,9 +53,9 @@
 
 <!-- Optional JavaScript -->
     <!-- JavaScript Dependencies: jQuery, Popper.js, Bootstrap JS, Shards JS -->
-    <script src="../js/jquery.min.js"></script>
-    <script src="../js/popper.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/shards.min.js"></script>
+    <script src="../../js/jquery.min.js"></script>
+    <!-- <script src="../../js/popper.min.js"></script> -->
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/shards.min.js"></script>
   </body>
 </html>

@@ -7,8 +7,10 @@
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css" >
     <link href="css/font-awesome.min.css" rel="stylesheet" >
+    <link href="css/style5.css" rel="stylesheet" >
     <link rel="stylesheet" href="css/shards.min.css">
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <style type="text/css">
       
       .sidebar-sticky {
@@ -47,7 +49,7 @@ body {
   }
   #section1 {padding:10px;height:500px;color: #fff; box-shadow: 3px 3px #bbbbbb; border-radius:25px; background-color: #0069d9;}
   #section2 {padding:10px;height:500px;color: #fff; box-shadow: 3px 3px #bbbbbb; border-radius:25px; background-color: grey;}
-  #section3 {padding:50px;height:500px;color: #fff; background-color: #ff9800;}
+  #section3 {padding:20px;height:80px; width: 300px; color: #fff; box-shadow: 3px 3px #bbbbbb; border-radius:25px; background-color: #ff9800;}
   #section41 {padding-top:50px;height:500px;color: #fff; background-color: #00bcd4;}
   #section42 {padding-top:50px;height:500px;color: #fff;  background-color: #009688;}
 

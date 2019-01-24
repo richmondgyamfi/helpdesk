@@ -1,14 +1,13 @@
-<?php 
-  // require_once 'php/connect.php';
+<?php
+// require_once 'php/connect.php';
 // include 'header.php';
 
- ?>
-  <body>
-    <?php 
-  include 'nav.php'; 
-   ?>
-
-        <!-- <div class="col-md-10 d-none d-md-block">{% block content %}{% endblock %}</div> -->
+?>
+<body>
+<?php
+include 'nav.php';
+?>
+<!-- <div class="col-md-10 d-none d-md-block">{% block content %}{% endblock %}</div> -->
 
     <!-- Optional JavaScript -->
     <!-- JavaScript Dependencies: jQuery, Popper.js, Bootstrap JS, Shards JS -->
@@ -28,6 +27,6 @@
   </div>
 </div>
 
-<?php 
-    include 'footer.php';
-     ?>
+<?php
+include 'footer.php';
+?>
